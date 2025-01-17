@@ -12,25 +12,6 @@ The **Instagram Follow-Unfollow Analyzer** is a local tool that helps users anal
 
 ---
 
-## Key Features
-
-- **Manual Data Handling**:
-  - Import JSON files downloaded from Instagram.
-  - Avoid automation or scraping to comply with Instagram’s policies.
-- **Comparison Logic**:
-  - Identify discrepancies between your followers and following lists.
-  - Parse pending follow requests for easy reference.
-- **CSV Export**:
-  - Generate CSV files listing:
-    - Users you follow but who don’t follow you back.
-    - Users who follow you but you don’t follow back.
-    - Pending follow requests.
-  - Include direct profile links for easy manual review and navigation.
-- **No Automation of Account Actions**:
-  - You must manually perform any follow/unfollow actions to avoid account bans.
-
----
-
 ## How to Run the Project
 
 1. **Prepare the Environment**:
