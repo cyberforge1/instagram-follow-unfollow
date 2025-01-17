@@ -1,4 +1,4 @@
-# Instagram Follow-Unfollow Analyzer
+# Instagram Follow Unfollow
 
 ## Project Summary
 
@@ -27,7 +27,7 @@ The **Instagram Follow-Unfollow Analyzer** is a local tool that helps users anal
      - `not_following_back.csv`: Users you follow but who don’t follow you back.
      - `not_followed_back.csv`: Users who follow you but you don’t follow back.
      - `pending_follow_requests.csv`: Pending follow requests with clickable profile links.
-     
+
 ---
 
 ## License
