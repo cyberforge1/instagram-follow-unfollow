@@ -1,0 +1,14 @@
+{
+    "followers": [
+        { "username": "alice" },
+        { "username": "bob" },
+        { "username": "charlie" },
+        { "username": "dave" }
+    ],
+    "following": [
+        { "username": "alice" },
+        { "username": "charlie" },
+        { "username": "eve" },
+        { "username": "frank" }
+    ]
+}
