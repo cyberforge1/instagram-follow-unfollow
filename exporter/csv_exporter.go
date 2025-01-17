@@ -1,4 +1,4 @@
-// exporter/csv_exporter.go
+// #exporter/csv_exporter.go
 
 package exporter
 
@@ -9,7 +9,7 @@ import (
 	"github.com/yourusername/instagram-follow-unfollow/models"
 )
 
-// ExportToCSV exports a list of users to a CSV file.
+// ExportToCSV exports a list of users to a CSV file with a clickable hyperlink.
 func ExportToCSV(filePath string, users []models.User) error {
 	file, err := os.Create(filePath)
 	if err != nil {
@@ -21,11 +21,17 @@ func ExportToCSV(filePath string, users []models.User) error {
 	defer writer.Flush()
 
 	// Write header
-	writer.Write([]string{"Username"})
+	writer.Write([]string{"Profile Link", "Username"})
 
 	// Write data
 	for _, user := range users {
-		writer.Write([]string{user.Username})
+		if len(user.StringListData) > 0 {
+			stringData := user.StringListData[0]
+			writer.Write([]string{
+				stringData.Href,
+				stringData.Value,
+			})
+		}
 	}
 
 	return nil

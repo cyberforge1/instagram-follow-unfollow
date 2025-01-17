@@ -1,4 +1,4 @@
-// analyzer/analyze.go
+// #analyzer/analyze.go
 
 package analyzer
 
@@ -10,26 +10,34 @@ func CompareLists(followers, following []models.User) (notFollowingBack, notFoll
 
 	// Create a map for faster lookups of the following list
 	for _, user := range following {
-		followingMap[user.Username] = true
+		if len(user.StringListData) > 0 {
+			followingMap[user.StringListData[0].Value] = true
+		}
 	}
 
 	// Find people who follow you but you don't follow back
 	for _, user := range followers {
-		if !followingMap[user.Username] {
-			notFollowedBack = append(notFollowedBack, user)
+		if len(user.StringListData) > 0 {
+			if !followingMap[user.StringListData[0].Value] {
+				notFollowedBack = append(notFollowedBack, user)
+			}
 		}
 	}
 
 	// Reset the map for the reverse check
 	followersMap := make(map[string]bool)
 	for _, user := range followers {
-		followersMap[user.Username] = true
+		if len(user.StringListData) > 0 {
+			followersMap[user.StringListData[0].Value] = true
+		}
 	}
 
 	// Find people you follow but who don't follow you back
 	for _, user := range following {
-		if !followersMap[user.Username] {
-			notFollowingBack = append(notFollowingBack, user)
+		if len(user.StringListData) > 0 {
+			if !followersMap[user.StringListData[0].Value] {
+				notFollowingBack = append(notFollowingBack, user)
+			}
 		}
 	}
 
